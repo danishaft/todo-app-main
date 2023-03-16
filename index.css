@@ -1,0 +1,302 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+     --background: #161722;
+    --sec-title-color: #e4e5f1;
+    --primary-background: #25273c;
+    --primary-text-color: #cacde8;
+    --border: #4d5066;
+    --sec-text-color: #777a92;
+}
+.light-mode{
+    --background: #e5e5f1;
+    --sec-title-color: #e4e5f1;
+    --primary-background: #fafafa;
+    --primary-text-color: #484b6a;
+    --border: #d4d4dc;
+    --sec-text-color: #9394a5;
+}
+body{
+    background: var(--background);
+    font-family: 'Josefin Sans', sans-serif;
+}
+header{
+    width: 100%;
+    height: 300px;
+    position: relative;
+}
+figure{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+} 
+.title-bar {
+    position: absolute;
+    top: 5.3em;
+    left: 30%;
+    right: 30%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 40%;
+}
+.title-bar h2 {
+    font-size: 45px;
+    font-weight: 700;
+    letter-spacing: 15px;
+    line-height: 40px;
+    color: var(--sec-title-color);
+}
+main{
+    position: absolute;
+    left: 30%;
+    right: 30%;
+    top: 10.5em;
+}
+.todo-form{
+    display: flex;
+    background: var(--primary-background);
+    padding: 1.1em 1.3em;
+    border-radius: 5px;
+    margin-bottom: 1.7em;
+}
+.todo-form .todo-input{
+    background: var(--primary-background);
+    display: block;
+    outline: none;
+    border: none;
+    color: var(--primary-text-color);
+    font-size: 17px;
+    margin-left: 1.3em;
+    caret-color: transparent;
+}
+.circle-btn{
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    background: var(--primary-background);
+    border: 1px solid var(--border);
+}
+ul{
+    list-style: none;
+}
+ul li {
+    display: flex;
+    background: var(--primary-background);
+    padding: 1.1em 1.3em;
+    border-bottom: 1px solid var(--border);
+    width: 100%;
+}
+.check-background {
+    background: linear-gradient(to bottom right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+}
+.li-btn .check {
+    font-size: 20px;
+    display: none;
+}
+
+ul li:nth-child(1){
+    border-radius: 5px 5px 0 0;
+}
+li .li-text {
+    font-size: 17px;
+    line-height: 24px;
+    margin-left: 1.3em;
+    color: var(--primary-text-color);
+}
+li:hover .delete-btn {
+    display: block;
+}
+.delete-svg{
+    background: var(--primary-background);
+}
+.delete-btn{
+    background: var(--primary-background);
+    outline: none;
+    border: none;
+    margin-left: auto;
+    display: none;
+}
+.bottom-bar{
+    display: flex;
+    justify-content: space-between;
+    padding: 1.1em 1.3em;
+    background: var(--primary-background);
+    border-radius: 0 0 5px 5px;
+}
+.bottom-bar span {
+    color: var(--sec-text-color);
+    font-size: 13px;
+    line-height: 30px;
+}
+.bottom-bar .status-btn{
+    display: flex;
+    justify-content: space-between;
+}
+.bottom-bar .status-btn button{
+    background: var(--primary-background);
+    border: none;
+    font-size: 14.5px;
+    color: var(--sec-text-color);
+    margin: 0 6px;
+}
+.bottom-bar .status-btn button:hover{
+    color: var(--primary-text-color);
+}
+.bottom-bar #clear-btn{
+    background: var(--primary-background);
+    border: none;
+    font-size: 13px;
+    color: var(--sec-text-color);
+}
+#theme-icon{
+    cursor: pointer;
+}
+button{
+    cursor: pointer;
+}
+a{
+    display: flex;
+    justify-content: center;
+    width: 25.4px;
+    height: 25.4px;
+    border-radius: 50%;
+    background: var(--primary-background);
+    border: 1px solid var(--border);
+}
+/* classes to be toggled*/
+.block{
+    display: block;
+}
+.check-text {
+    color: var(--sec-text-color) !important;
+    text-decoration: line-through;
+}
+.check-background {
+    background-color: linear-gradient(to bottom right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+    color: white;
+}
+.active{
+    color: #3a7bfd !important;
+}
+
+/* media queries*/
+
+/* tablet*/
+
+@media (max-width: 830px){
+    header{
+        width: 100%;
+        height: 250px;
+    }
+    .title-bar {
+        left: 22%;
+        right: 22%;
+        width: 56%;
+    }
+    main{
+        left: 22%;
+        right: 22%;
+        top: 10.5em;
+    }
+}
+
+@media (max-width: 660px) {
+    .title-bar {
+        left: 18%;
+        right: 18%;
+        width: 64%;
+    }
+    main{
+        left: 18%;
+        right: 18%;
+        top: 10.5em;
+    }
+    .todo-form .todo-input{
+        font-size: 15px;
+    }
+    .title-bar h2 {
+        font-size: 40px;
+        font-weight: 600;
+        letter-spacing: 14px;
+        line-height: 40px;
+    }
+    .circle-btn{
+        width: 1.7em;
+        height: 1.7em;
+        border-radius: 50%;
+    }
+    a{
+        width: 1.5em;
+        height: 1.5em;
+        border-radius: 50%;
+    }
+    li .li-text {
+        font-size: 15px;
+        line-height: 22px;
+        margin-left: 1.3em;
+    }
+    .bottom-bar span {
+        font-size: 11px;
+        line-height: 30px;
+    }
+    .bottom-bar .status-btn button{
+        font-size: 13px;
+        margin: 0 4px;
+    }
+    .bottom-bar #clear-btn{
+        font-size: 11px;
+    }
+}
+
+/* phones*/
+@media (max-width: 560px) {
+    .title-bar {
+        left: 10%;
+        right: 10%;
+        width: 80%;
+        top: 4em;
+    }
+    main{
+        left: 10%;
+        right: 10%;
+        top: 8em;
+    }
+}
+
+@media (max-width: 399px){
+    .todo-form .todo-input{
+        font-size: 12px;
+    }
+    .title-bar h2 {
+        font-size: 37px;
+        font-weight: 600;
+        letter-spacing: 14px;
+        line-height: 40px;
+    }
+    li .li-text {
+        font-size: 14px;
+        line-height: 25px;
+        margin-left: 1.1em;
+    }
+    .bottom-bar span {
+        font-size: 8px;
+        line-height: 30px;
+    }
+    .bottom-bar .status-btn button{
+        font-size: 10px;
+        margin: 0 4px;
+    }
+    .bottom-bar #clear-btn{
+        font-size: 8px;
+    }
+}
